@@ -21,6 +21,15 @@ class UserModuleTest extends TestCase
             ->assertSee('Joel')
             ->assertSee('Juana');
     }
+    function mensaje_si_la_lista_esta_vacia()
+    {
+        $this->get('/usuarios?empty')
+            ->assertStatus(200)
+            ->assertSee('No hay usuarios registrados');
+    }
+
+
+
     function Detalles()
     {
         $this->get('/usuarios/5')

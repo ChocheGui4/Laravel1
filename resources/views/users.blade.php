@@ -9,14 +9,17 @@
 </head>
 <body>
     <h1>{{ $title }}</h1>
+    <hr>
 
-    <ul>
-        @foreach ($users as $user)
-            <li>{{ $user }}</li>
-        @endforeach
-
-
-    </ul>
+    @if(! empty($users))
+        <ul>
+            @foreach ($users as $user)
+                <li>{{ $user }}</li>
+            @endforeach
+        </ul>
+    @else
+        <p>No hay usuarios registrados</p>
+    @endif
 
 </body>
 </html>
