@@ -18,7 +18,7 @@ class UserController extends Controller
         ];
         $title = 'Listado de usuarios';
 
-        
+
         return view('users',compact('title','users'));
     }
     public function show($id)
