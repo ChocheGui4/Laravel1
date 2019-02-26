@@ -2,13 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     public function index()
     {
-        return 'Usuarios';
+        $users = [
+            'Joel',
+            'Juana',
+            'Jenny',
+            'Any',
+            '<script>alert("Clicker")</script>'
+        ];
+
+        return view('users')->with([
+        'users' => $users,
+        'title' => 'Listado de usuarios'
+    ]);;
     }
     public function show($id)
     {
