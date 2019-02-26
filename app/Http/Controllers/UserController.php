@@ -16,10 +16,11 @@ class UserController extends Controller
             'Any',
             '<script>alert("Clicker")</script>'
         ];
-
-        return view('users')
-            ->with('users', $users)
-            ->with('title','Listado de usuarios');
+        $title = 'Listado de usuarios';
+        return view('users',[
+            'users' => $users,
+            'title' => $title
+        ]);
     }
     public function show($id)
     {
