@@ -46,6 +46,12 @@ class UserModuleTest extends TestCase
     {
         $this->get('/usuarios/nuevo')
             ->assertStatus(200)
-            ->assertSee('Crear nuevo usuario');
+            ->assertSee('Listados de contactos nuevos');
+    }
+    function Nuevo_contacto()
+    {
+        $this->get('/usuarios/nuevo?empty')
+            ->assertStatus(200)
+            ->assertSee('No hay contactos');
     }
 }

@@ -28,6 +28,16 @@ class UserController extends Controller
     }
     public function create()
     {
-        return 'Crear nuevo usuario';
+        if(request()->has('empty')){
+            $contacts = [];
+        }else {
+            $contacts = [
+                'Choche',
+                'Any',
+                'rocky12'
+            ];
+        }
+        $title = 'Listados de contactos nuevos';
+        return view('NuevosUsuarios',compact('title','contacts'));
     }
 }
