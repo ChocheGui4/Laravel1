@@ -17,10 +17,9 @@ class UserController extends Controller
             '<script>alert("Clicker")</script>'
         ];
         $title = 'Listado de usuarios';
-        return view('users',[
-            'users' => $users,
-            'title' => $title
-        ]);
+
+        
+        return view('users',compact('title','users'));
     }
     public function show($id)
     {
